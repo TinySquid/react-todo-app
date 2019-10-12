@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Todo from './components/Todo';
 // import styled from 'styled-components';
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
   ]);
 
   const addTodo = content => {
-    console.log('add todo:', content);
+
   }
 
   const toggleTodoState = todoIndex => {
@@ -32,6 +33,11 @@ function App() {
 
   return (
     <div>
+      <div className="todo-list">
+        {todos.map((todo, idx) => (
+          <Todo key={idx} todoIndex={idx} todo={todo} toggleTodoState={toggleTodoState} deleteTodo={deleteTodo} />
+        ))}
+      </div>
     </div>
   );
 }

@@ -56,7 +56,6 @@ html {
 }
 
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -64,6 +63,9 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	
 	font-size: 1.6rem;
+  line-height: 1.4;
+	color: whitesmoke;
+	background-color: rgb(32, 32, 32);
 }
 
 code {

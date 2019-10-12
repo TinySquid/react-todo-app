@@ -18,11 +18,11 @@ const TodoHeader = styled.h1`
   box-shadow: 0px -2px 3px 0px rgba(0,0,0,0.7);
   margin-top: 5%;
   padding-left: .8%;
-  width: 40%;
+  width: 25%;
 `
 
 const TodoList = styled.div`
-  width: 40%;
+  width: 25%;
   padding: 1%;
   box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.7);
   background-color: rgb(42, 42, 42);
@@ -46,15 +46,22 @@ function App() {
   ]);
 
   const addTodo = content => {
-
+    const newTodoState = [...todos, { content }];
+    setTodos(newTodoState);
   }
 
+  //Toggle todo state (done, not done) by getting todo state and flipping the isDone bool on todoIndex.
   const toggleTodoState = todoIndex => {
-
+    const newTodoState = [...todos];
+    newTodoState[todoIndex].isDone = !newTodoState[todoIndex].isDone;
+    setTodos(newTodoState);
   }
 
+  //Delete a todo by getting the todo list and splicing 1 item from todoIndex position.
   const deleteTodo = todoIndex => {
-
+    const newTodoState = [...todos];
+    newTodoState.splice(todoIndex, 1);
+    setTodos(newTodoState);
   }
 
   return (

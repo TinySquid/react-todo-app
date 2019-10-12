@@ -9,18 +9,33 @@ const TodoItem = styled.div`
   /* Easier to just modify style at the div than to do this method */
   /* text-decoration: ${props => props.isDone ? "line-through" : "none"} */
 `
-const TodoButtons = styled.div`
+const TodoButton = styled.button`
+  color: white;
+  background-color: #135d8e;
+  border: 1px solid black;
+  height: 35px;
+  margin-top: 5px;
+  margin-right: 5px;
 
+  :hover {
+    border: 1px solid white;
+    background-color: #2f6f9f;
+  }
+
+  :active {
+    border: 1px solid white;
+    background-color: #034d7e;
+  }
 `
 
 export default function Todo({ todo, todoIndex, toggleTodoState, deleteTodo }) {
   return (
     <TodoItem style={{ textDecoration: todo.isDone ? 'line-through' : '' }}>
       {todo.content}
-      <TodoButtons>
-        <button onClick={() => toggleTodoState(todoIndex)}>{todo.isDone ? 'Mark Incomplete' : 'Mark Complete'}</button>
-        <button onClick={() => deleteTodo(todoIndex)}>X</button>
-      </TodoButtons>
+      <div>
+        <TodoButton onClick={() => toggleTodoState(todoIndex)}>{todo.isDone ? 'Mark Incomplete' : 'Mark Complete'}</TodoButton>
+        <TodoButton onClick={() => deleteTodo(todoIndex)}>X</TodoButton>
+      </div>
     </TodoItem>
   )
 }

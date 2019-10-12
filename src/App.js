@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Todo from './components/Todo';
+import TodoInput from './components/TodoInput';
 
 const AppRoot = styled.div`
   display: flex;
@@ -74,6 +75,7 @@ function App() {
         {todos.map((todo, idx) => (
           <Todo key={idx} todoIndex={idx} todo={todo} toggleTodoState={toggleTodoState} deleteTodo={deleteTodo} />
         ))}
+        <TodoInput addTodo={addTodo} />
       </TodoList>
     </AppRoot>
   );

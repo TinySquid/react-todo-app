@@ -10,7 +10,7 @@ const TodoItem = styled.div`
   /* text-decoration: ${props => props.isDone ? "line-through" : "none"} */
 `
 const TodoButton = styled.button`
-  color: white;
+  color: whitesmoke;
   background-color: #135d8e;
   border: 1px solid black;
   height: 35px;
@@ -18,12 +18,12 @@ const TodoButton = styled.button`
   margin-right: 5px;
 
   :hover {
-    border: 1px solid white;
+    border: 1px solid whitesmoke;
     background-color: #2f6f9f;
   }
 
   :active {
-    border: 1px solid white;
+    border: 1px solid whitesmoke;
     background-color: #034d7e;
   }
 `

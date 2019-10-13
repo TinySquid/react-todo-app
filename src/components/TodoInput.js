@@ -5,6 +5,11 @@ const InputBox = styled.input`
   margin-top: 3%;
   width: 100%;
   height: 25px;
+  padding: 3%;
+  color: whitesmoke;
+  background-color: #202020;
+  border: 1px solid #202020;
+  box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.4);
 `
 
 export default function TodoInput({ addTodo }) {

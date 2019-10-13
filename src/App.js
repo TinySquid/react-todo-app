@@ -46,6 +46,7 @@ function App() {
     },
   ]);
 
+  //Add a new todo item to state
   const addTodo = content => {
     const newTodoState = [...todos, { content }];
     setTodos(newTodoState);

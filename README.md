@@ -1,3 +1,6 @@
+## Info
+This is a todo app that I made using react and styled-components. It's purpose is to review CRUD operations and to implement something I haven't used before (styled-components).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

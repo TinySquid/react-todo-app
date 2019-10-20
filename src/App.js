@@ -34,12 +34,11 @@ const TodoHeader = styled.h1`
     width: 60%;
   }
   @media ${device.xl} {
-    width: 30%;
+    width: 25%;
   }
-`
+`;
 
-const TodoList = styled.div`
-  width: 30%;
+const TodoList = styled.section`
   padding: 1%;
   box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.7);
   background-color: rgb(42, 42, 42);
@@ -54,12 +53,11 @@ const TodoList = styled.div`
     width: 60%;
   }
   @media ${device.xl} {
-    width: 30%;
+    width: 25%;
   }
-`
+`;
 
 const App = () => {
-  //Todo state & initial todos
   const [todos, setTodos] = useState([
     {
       content: 'Example todo #1',
@@ -75,20 +73,20 @@ const App = () => {
     },
   ]);
 
-  //Add a new todo item to state
+  //Allow for adding new todos to state
   const addTodo = content => {
     const newTodoState = [...todos, { content }];
     setTodos(newTodoState);
   }
 
-  //Toggle todo state (done, not done) by getting todo state and flipping the isDone bool on todoIndex.
+  //Toggle todo state (done, not done)
   const toggleTodoState = todoIndex => {
     const newTodoState = [...todos];
     newTodoState[todoIndex].isDone = !newTodoState[todoIndex].isDone;
     setTodos(newTodoState);
   }
 
-  //Delete a todo by getting the todo list and splicing 1 item from todoIndex position.
+  //Delete a todo by ID
   const deleteTodo = todoIndex => {
     const newTodoState = [...todos];
     newTodoState.splice(todoIndex, 1);
@@ -101,7 +99,6 @@ const App = () => {
         TodoList
       </TodoHeader>
       <TodoList>
-        {/* Map over todos and add a todo for each entry in state */}
         {todos.map((todo, idx) => (
           <Todo key={idx} todoIndex={idx} todo={todo} toggleTodoState={toggleTodoState} deleteTodo={deleteTodo} />
         ))}

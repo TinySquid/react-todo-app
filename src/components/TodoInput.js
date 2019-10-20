@@ -15,7 +15,7 @@ const InputBox = styled.input`
 const TodoInput = ({ addTodo }) => {
   const [text, setText] = useState('');
 
-  //Adds a new todo 
+  //Handler to add new todo item
   const handleNewTodo = e => {
     e.preventDefault();
     if (!text) {
@@ -24,7 +24,6 @@ const TodoInput = ({ addTodo }) => {
       addTodo(text);
     }
 
-    //Reset input box
     setText('');
   }
 

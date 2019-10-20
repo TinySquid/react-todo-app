@@ -4,12 +4,15 @@ import styled from 'styled-components';
 import Todo from './components/Todo';
 import TodoInput from './components/TodoInput';
 
+import { device } from './breakpoints';
+
 const TodoContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-content: center;
-  `
+  width: 100%;
+`;
 
 const TodoHeader = styled.h1`
   font-size: 3rem;
@@ -20,14 +23,39 @@ const TodoHeader = styled.h1`
   box-shadow: 0px -2px 3px 0px rgba(0,0,0,0.7);
   margin-top: 5%;
   padding-left: .8%;
-  width: 25%;
+
+  @media ${device.sm} {
+    width: 98%;
+  }
+  @media ${device.md} {
+    width: 75%;
+  }
+  @media ${device.lg} {
+    width: 60%;
+  }
+  @media ${device.xl} {
+    width: 30%;
+  }
 `
 
 const TodoList = styled.div`
-  width: 25%;
+  width: 30%;
   padding: 1%;
   box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.7);
   background-color: rgb(42, 42, 42);
+
+  @media ${device.sm} {
+    width: 98%;
+  }
+  @media ${device.md} {
+    width: 75%;
+  }
+  @media ${device.lg} {
+    width: 60%;
+  }
+  @media ${device.xl} {
+    width: 30%;
+  }
 `
 
 const App = () => {

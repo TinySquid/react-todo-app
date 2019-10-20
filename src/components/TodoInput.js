@@ -10,9 +10,9 @@ const InputBox = styled.input`
   background-color: #202020;
   border: 1px solid #202020;
   box-shadow: inset 0 1px 3px 0 rgba(0,0,0,0.4);
-`
+`;
 
-export default function TodoInput({ addTodo }) {
+const TodoInput = ({ addTodo }) => {
   const [text, setText] = useState('');
 
   //Adds a new todo 
@@ -32,5 +32,7 @@ export default function TodoInput({ addTodo }) {
     <form onSubmit={handleNewTodo}>
       <InputBox type="text" value={text} onChange={e => setText(e.target.value)} placeholder="New todo item..."></InputBox>
     </form>
-  )
+  );
 }
+
+export default TodoInput;

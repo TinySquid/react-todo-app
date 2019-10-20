@@ -5,10 +5,8 @@ const TodoItem = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+`;
 
-  /* Easier to just modify style at the div than to do this method */
-  /* text-decoration: ${props => props.isDone ? "line-through" : "none"} */
-`
 const TodoButton = styled.button`
   color: whitesmoke;
   background-color: #135d8e;
@@ -26,9 +24,9 @@ const TodoButton = styled.button`
     border: 1px solid whitesmoke;
     background-color: #034d7e;
   }
-`
+`;
 
-export default function Todo({ todo, todoIndex, toggleTodoState, deleteTodo }) {
+const Todo = ({ todo, todoIndex, toggleTodoState, deleteTodo }) => {
   return (
     <TodoItem style={{ textDecoration: todo.isDone ? 'line-through' : '' }}>
       {todo.content}
@@ -37,7 +35,8 @@ export default function Todo({ todo, todoIndex, toggleTodoState, deleteTodo }) {
         <TodoButton onClick={() => deleteTodo(todoIndex)}>X</TodoButton>
       </div>
     </TodoItem>
-  )
+  );
 }
 
+export default Todo;
 

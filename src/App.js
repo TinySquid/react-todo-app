@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+
 import Todo from './components/Todo';
 import TodoInput from './components/TodoInput';
 
-const AppRoot = styled.div`
+const TodoContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-content: center;
-`
+  `
 
 const TodoHeader = styled.h1`
   font-size: 3rem;
@@ -29,7 +30,7 @@ const TodoList = styled.div`
   background-color: rgb(42, 42, 42);
 `
 
-function App() {
+const App = () => {
   //Todo state & initial todos
   const [todos, setTodos] = useState([
     {
@@ -67,7 +68,7 @@ function App() {
   }
 
   return (
-    <AppRoot>
+    <TodoContainer>
       <TodoHeader>
         TodoList
       </TodoHeader>
@@ -78,7 +79,7 @@ function App() {
         ))}
         <TodoInput addTodo={addTodo} />
       </TodoList>
-    </AppRoot>
+    </TodoContainer>
   );
 }
 
